@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:phil_iri/src/view/widget_tree.dart';
+import 'package:phil_iri/src/auth/views/widget_tree.dart';
+import 'package:phil_iri/src/views/welcome/welcome_page.dart';
 
 void main() {
   runApp(
@@ -11,7 +12,8 @@ void main() {
           brightness: Brightness.light,
         ),
       ),
-      home: const WidgetTree(),
+      // home: const WelcomePage(),
+      home: const AuthWidgetTree(),
     ),
   );
 }
