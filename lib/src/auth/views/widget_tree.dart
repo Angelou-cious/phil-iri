@@ -25,14 +25,13 @@ class AuthWidgetTreeState extends State<AuthWidgetTree> {
           appBar: PreferredSize(
             preferredSize: const Size.fromHeight(200),
             child: AppBar(
-              backgroundColor: Colors.teal[200],
               toolbarHeight: 150,
-              bottom: const TabBar(
-                tabs: [
+              bottom: TabBar(
+                tabs: const [
                   Tab(text: 'Login'),
                   Tab(text: 'Register'),
                 ],
-                indicatorColor: Colors.white,
+                indicatorColor: Colors.teal.shade200,
               ),
               title: const Center(
                 child: Column(

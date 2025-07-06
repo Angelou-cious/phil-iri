@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:phil_iri/src/auth/widgets/custom_button.dart';
+import 'package:phil_iri/src/auth/widgets/custom_text_form_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,39 +8,82 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black12,
-          ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+        ),
+        child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 20.0,
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
+                child: CustomButton(
+                  label: 'Email',
+                  svg: 'assets/svg/google.svg',
+                  onPressed: () {},
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Row(children: [
+                  Expanded(child: Divider()),
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Text('or continue with email'),
+                  ),
+                  Expanded(child: Divider()),
+                ]),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: CustomTextFormField(
+                  hintText: 'Email',
+                  prefixIcon: Icon(
+                    color: Colors.teal,
+                    Icons.email,
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: CustomTextFormField(
+                  hintText: 'Password',
+                  prefixIcon: Icon(
+                    color: Colors.teal,
+                    Icons.lock,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const Text(
+                'Forgot Password?',
+                textAlign: TextAlign.left,
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
                 child: ElevatedButton(
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.teal,
+                    surfaceTintColor: Colors.teal,
                     minimumSize: const Size.fromHeight(60.0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/google.svg',
-                        height: 20,
-                        width: 20,
-                      ),
-                      const Text('Email'),
-                    ],
-                  ),
+                  child: const Text('Log In'),
                 ),
-              ),
+              )
             ],
           ),
         ),
