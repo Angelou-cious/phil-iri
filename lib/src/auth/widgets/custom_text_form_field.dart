@@ -5,10 +5,14 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.prefixIcon,
+    this.suffixIcon,
+    this.onTap,
   });
 
   final String hintText;
-  final Icon prefixIcon;
+  final IconData prefixIcon;
+  final IconData? suffixIcon;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,9 +27,11 @@ class CustomTextFormField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        onTap: onTap,
         decoration: InputDecoration(
           hintText: hintText,
-          prefixIcon: prefixIcon,
+          prefixIcon: Icon(prefixIcon),
+          suffixIcon: Icon(suffixIcon),
           fillColor: Colors.white70,
           filled: true,
           focusColor: Colors.white70,

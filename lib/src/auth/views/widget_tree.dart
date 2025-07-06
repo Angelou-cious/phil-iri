@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:phil_iri/src/auth/views/login_page.dart';
-import 'package:phil_iri/src/auth/views/registration_page.dart';
+import 'package:phil_iri/src/auth/views/signup_page.dart';
 
 List<Widget> pages = [
   const LoginPage(),
-  const RegistrationPage(),
+  const SignupPage(),
 ];
 
 class AuthWidgetTree extends StatefulWidget {
@@ -26,12 +26,27 @@ class AuthWidgetTreeState extends State<AuthWidgetTree> {
             preferredSize: const Size.fromHeight(200),
             child: AppBar(
               toolbarHeight: 150,
-              bottom: TabBar(
-                tabs: const [
-                  Tab(text: 'Login'),
-                  Tab(text: 'Register'),
+              bottom: const TabBar(
+                labelColor: Colors.teal,
+                labelStyle: TextStyle(color: Colors.white),
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorColor: Colors.white,
+                indicator: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.teal,
+                      width: 2.5,
+                    ),
+                  ),
+                ),
+                tabs: [
+                  Tab(
+                    text: 'Sign In',
+                  ),
+                  Tab(
+                    text: 'Sign Up',
+                  ),
                 ],
-                indicatorColor: Colors.teal.shade200,
               ),
               title: const Center(
                 child: Column(

@@ -42,20 +42,14 @@ class LoginPage extends StatelessWidget {
                 padding: EdgeInsets.all(10.0),
                 child: CustomTextFormField(
                   hintText: 'Email',
-                  prefixIcon: Icon(
-                    color: Colors.teal,
-                    Icons.email,
-                  ),
+                  prefixIcon: Icons.email,
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: CustomTextFormField(
                   hintText: 'Password',
-                  prefixIcon: Icon(
-                    color: Colors.teal,
-                    Icons.lock,
-                  ),
+                  prefixIcon: Icons.lock,
                 ),
               ),
               const SizedBox(
